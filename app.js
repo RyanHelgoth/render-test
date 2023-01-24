@@ -1,11 +1,12 @@
 const express = require("express");
 const https = require("https");
 const path = require("path");
+
+// https://stackoverflow.com/a/39691321
 const dotenv = require("dotenv").config();
 
 const app = express();
-const PORT = "3000";
-// https://stackoverflow.com/a/39691321
+const PORT = process.env.PORT || "3000";
 const KEY = process.env.KEY;
 
 
