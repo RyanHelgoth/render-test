@@ -1,10 +1,13 @@
 const express = require("express");
 const https = require("https");
 const path = require("path");
+const dotenv = require("dotenv").config();
 
 const app = express();
 const PORT = "3000";
-const {KEY} = require(path.join(__dirname, "secrets.js"));
+// https://stackoverflow.com/a/39691321
+const KEY = process.env.KEY;
+
 
 app.use("/public", express.static(path.join(__dirname, "public")));
 app.use(express.urlencoded({extended: true}));
